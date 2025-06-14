@@ -1,0 +1,40 @@
+package Part1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
+
+public class FirstSeleniumTest {
+
+    WebDriver driver;
+
+    @BeforeClass
+    public void setup() {
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    }
+
+    @AfterClass
+    public void tearDown() {
+        driver.quit();
+    }
+
+    @Test
+    public void testLoggingIntoApplication() throws InterruptedException {
+
+        Thread.sleep(2000);
+       WebElement username = driver.findElement(By.name("username"));
+       username.sendKeys("Admin");
+
+       var password = driver.findElement(By.name("password"));
+       password.sendKeys("admin123");
+
+       driver.findElement(By.tagName("button")).click();
+
+
+
+    }
+}
