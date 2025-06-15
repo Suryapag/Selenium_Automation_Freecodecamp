@@ -26,7 +26,7 @@ public class FirstSeleniumTest {
     @Test
     public void testLoggingIntoApplication() throws InterruptedException {
 
-        Thread.sleep(2000);
+       Thread.sleep(2000);
        WebElement username = driver.findElement(By.name("username"));
        username.sendKeys("Admin");
 
