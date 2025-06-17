@@ -1,4 +1,4 @@
-package com.saucedemo.pages;
+package com.saucedemo;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage{
@@ -16,7 +16,18 @@ public class LoginPage extends BasePage{
         set(passwordField, password);
     }
 
-    public void clickLoginButton() {
+    public ProductsPage clickLoginButton() {
         click(loginButton);
+        return new ProductsPage();
+    }
+
+    public ProductsPage logIntoApplication(String username, String password) {
+        setUsernameField(username);
+        setPasswordField(password);
+        return clickLoginButton();
+    }
+
+    public String geterrormessage() {
+        return find(errorMessage).getText();
     }
 }
