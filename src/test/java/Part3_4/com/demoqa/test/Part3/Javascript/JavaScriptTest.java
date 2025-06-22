@@ -10,4 +10,3 @@ public class JavaScriptTest extends basetest {
         homepage.goToForms();
     }
 }
-//1.4
