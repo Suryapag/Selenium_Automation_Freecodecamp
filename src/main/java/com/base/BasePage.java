@@ -1,4 +1,4 @@
-package com.saucedemo;
+package com.base;
 
 import org.openqa.selenium.*;
 
@@ -21,5 +21,13 @@ public class BasePage {
 
     protected void click(By locator) {
         find(locator).click();
+    }
+
+    public static void delay(int millisecongs){
+        try {
+            Thread.sleep(millisecongs);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,8 +1,7 @@
 package Part3_4.com.demoqa.base;
 
 import com.demoqa.pages.homepage;
-import com.saucedemo.BasePage;
-import org.checkerframework.checker.lock.qual.Holding;
+import com.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -10,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import static Utilites.utility.setUtilityDriver;
+import static com.base.BasePage.*;
 
 public class basetest {
 
@@ -35,6 +35,7 @@ public class basetest {
 
     @AfterClass
     public void tearDown() {
+        delay(3000);
         driver.quit();
     }
 
